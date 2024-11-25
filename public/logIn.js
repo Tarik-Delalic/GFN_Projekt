@@ -12,5 +12,28 @@ submittBtn.addEventListener('click', () => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ email: email, password: password })
-    }).then(response => response.json()).then(data => console.log(data));
+    }).then(response => {
+        if (!response.ok) throw new Error('Login failed');
+        return response.json();
+    }).then(data => {
+        localStorage.setItem('token', data.token);
+        console.log('Logged in successfully!!!');
+        window.location.replace('/dashboard.html');
+    }).catch(err =>{
+        alert('Wrong password or email!!')
+        console.error(err)
+    } )
 })
+
+fetch('/dashboard', {
+    method: "GET",
+    headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+})
+    .then(response => {
+        if (!response.ok) throw new Error('Access denied');
+        return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(err => console.error(err));

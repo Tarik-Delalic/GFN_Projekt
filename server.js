@@ -9,9 +9,9 @@ const apiRoutes = require('./routes/routes');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve index.html when the root URL (/) is visited
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// });
 
 app.use('/', apiRoutes);
 app.listen(PORT, () => {

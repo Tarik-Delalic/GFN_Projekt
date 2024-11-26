@@ -69,6 +69,10 @@ router.post('/admin', (req, res) => {
 
 router.get('/dashboard', authenticateToken, (req, res) => {
     res.json({ message: 'Welcome to the protected dashboard', user: req.user })
+});
+
+router.get('/fractal', authenticateToken, (req, res) => {
+    res.json({ message: 'Welcome to the protected fractal', user: req.user })
 })
 
 module.exports = router;

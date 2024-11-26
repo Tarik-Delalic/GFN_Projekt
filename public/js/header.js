@@ -11,10 +11,10 @@ header.innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light sh
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav w-100">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Calculator</a>
+                            <a class="nav-link" aria-current="page" href="dashboard.html">Calculator</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="fractal.html">Fractal</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Pricing</a>

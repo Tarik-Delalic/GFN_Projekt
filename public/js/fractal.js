@@ -18,7 +18,7 @@ const spiral = document.getElementById('spiral');
 let height = 1;
 //Number of elements
 const elements = 2000;
-//The value which should be added for transform from the original 
+//The value which should be added for transform from the origin 
 let dontKnow = 0;
 
 

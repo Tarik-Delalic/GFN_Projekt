@@ -15,7 +15,7 @@ header.innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light sh
                             <a class="nav-link" href="fractal.html">Fractal</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link" href="rockPaperScissors.html">RockPaperScissors</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Disabled</a>

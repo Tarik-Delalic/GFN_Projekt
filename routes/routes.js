@@ -73,6 +73,10 @@ router.get('/dashboard', authenticateToken, (req, res) => {
 
 router.get('/fractal', authenticateToken, (req, res) => {
     res.json({ message: 'Welcome to the protected fractal', user: req.user })
+});
+
+router.get('/rockPaperScissors', authenticateToken, (req, res) => {
+    res.json({ message: 'Welcome to the protected rockPaperScissors', user: req.user })
 })
 
 module.exports = router;

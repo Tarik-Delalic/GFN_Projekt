@@ -1,6 +1,4 @@
 const header = document.getElementById('header');
-
-
 header.innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
             <div class="container-fluid">
                 <a class="navbar-brand">MyApp</a>

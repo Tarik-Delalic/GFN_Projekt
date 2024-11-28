@@ -17,11 +17,9 @@ const tetrisShapes = [cubeShape, lineShape, zShape, lShape, tShape];
 
 
 
-
 const randomShape = Math.floor(Math.random() * tetrisShapes.length);
 
 let currentShape = tetrisShapes[randomShape];
-
 
 
 
@@ -76,7 +74,10 @@ const down = () => {
 const left = () => {
     erase();
 
-    if (currentShape.some(val => val % 10 === 0)) {
+   
+    
+    
+    if (currentShape.some(val => val % 10 === 0)|| currentShape.some(val => cubes[val - 1].classList.contains('freeze')) ) {
         currentShape.forEach((value, index) => {
             currentShape[index] = value
         })
@@ -95,7 +96,7 @@ const left = () => {
 
 const right = () => {
     erase();
-    if (currentShape.some(val => val % 10 === 9)) {
+    if (currentShape.some(val => val % 10 === 9) || currentShape.some(val => cubes[val + 1].classList.contains('freeze')) ) {
         currentShape.forEach((value, index) => {
             currentShape[index] = value;
         })
@@ -112,22 +113,31 @@ const right = () => {
 const freeze = () => {
 
     currentShape.forEach((value, index) => {
-        console.log(value)
+        
         cubes[currentShape[index]].classList.add('freeze');
         currentShape[index] -= 10;
 
     });
-  
-    currentShape = [4, 5, 14, 15];
+    
+const randomShape = Math.floor(Math.random() * tetrisShapes.length);
+    currentShape = tetrisShapes[randomShape];
 
 };
 
+const startInterval = () => {
+    if (!interval) { // Check if an interval is not already running
+        interval = setInterval(() => {
+            down() 
+        }, 1000);
+    }
+};
 
-const interval = setInterval(() => { 
-    console.log('something')
-    down() 
 
-}, 1000)
+// setInterval(() => { 
+//     console.log('sd')
+//     down() 
+
+// }, 1000)
 
 
 

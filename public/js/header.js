@@ -18,7 +18,7 @@ header.innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light sh
                             <a class="nav-link" href="rockPaperScissors.html">RockPaperScissors</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            <a class="nav-link " href="tetris.html">Tetris</a>
                         </li>
                         <li class="nav-item ms-auto">
                             <button class="btn btn-outline-danger btn-sm" id="btnLogout">Logout</button>
@@ -30,7 +30,7 @@ header.innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light sh
         </nav>`;
 
 const logoutBtn = document.getElementById('btnLogout');
-logoutBtn.addEventListener('click',()=>{
+logoutBtn.addEventListener('click', () => {
     localStorage.removeItem('token');
     window.location.href = '/';
 })

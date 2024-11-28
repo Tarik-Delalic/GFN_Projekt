@@ -2,6 +2,8 @@ const jwt = require('jsonwebtoken');
 const express = require('express');
 const mysql = require('mysql2');
 const router = express.Router();
+const crypto = require('crypto');
+
 
 const db = mysql.createConnection({
     host: 'localhost',
@@ -43,9 +45,12 @@ const authenticateToken = (req, res, next) => {
 
 router.post('/admin', (req, res) => {
     const { email, password } = req.body;
-
+    
+    const hashedPassword = crypto.createHash('sha256').update(password).digest('hex');
+    
     const querry = `SELECT * FROM admin Where email = ? AND password = ? `;
-    db.query(querry, [email, password], (err, result) => {
+    
+    db.query(querry, [email, hashedPassword], (err, result) => {
         if (err) {
             console.error("Something went wrong", err);
         }
@@ -77,6 +82,9 @@ router.get('/fractal', authenticateToken, (req, res) => {
 
 router.get('/rockPaperScissors', authenticateToken, (req, res) => {
     res.json({ message: 'Welcome to the protected rockPaperScissors', user: req.user })
+});
+router.get('/tetris', authenticateToken, (req, res) => {
+    res.json({ message: 'Welcome to the protected tetris page', user: req.user })
 })
 
 module.exports = router;

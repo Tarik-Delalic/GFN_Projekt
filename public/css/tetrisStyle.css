@@ -1,0 +1,28 @@
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vh;
+ 
+    margin: auto;
+    
+}
+.grid{
+    width: 320px;
+    height: 610px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border:10px solid gray;
+    border-top: none;
+}
+.cube{
+    height: 30px;
+    width: 30px;
+    background-color: lightgray;
+    
+}
+.fill {
+    background: dodgerblue;
+}

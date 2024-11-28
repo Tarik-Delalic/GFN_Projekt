@@ -85,6 +85,6 @@ router.get('/rockPaperScissors', authenticateToken, (req, res) => {
 });
 router.get('/tetris', authenticateToken, (req, res) => {
     res.json({ message: 'Welcome to the protected tetris page', user: req.user })
-})
+});
 
 module.exports = router;

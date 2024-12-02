@@ -20,6 +20,9 @@ header.innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light sh
                         <li class="nav-item">
                             <a class="nav-link " href="tetris.html">Tetris</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="pingPong.html">PingPong</a>
+                        </li>
                         <li class="nav-item ms-auto">
                             <button class="btn btn-outline-danger btn-sm" id="btnLogout">Logout</button>
                         </li>

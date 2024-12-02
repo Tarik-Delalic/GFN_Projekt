@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve index.html when the root URL (/) is visited
 // app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public', 'index.html'));
+//     res.sendFile(path.join(__dirname, 'public', 'index.html'));s
 // });
 
 app.use('/', apiRoutes);
